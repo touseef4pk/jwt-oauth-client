@@ -1,0 +1,59 @@
+<div class="login-container">
+  <h2 class="app-title">User Management System</h2>
+  <h1>Sign In</h1>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div style="text-align:center; margin-top: 20px;">
+    <button class="google-btn" (click)="loginWithGoogle()">
+      <img src="https://developers.google.com/identity/images/g-logo.png" width="20">
+      Continue with Google
+    </button>
+  </div>
+  
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input id="email" formControlName="email" placeholder="you@example.com" required />
+    </div>
+    @if (form.controls.email.invalid && form.controls.email.touched) {
+    <div class="error">
+      @if (form.controls.email.errors?.['required']) {
+      <small>Email is required.</small>
+      } @if (form.controls.email.errors?.['email']) {
+      <small>Enter a valid email address.</small>
+      }
+    </div>
+    }
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="Enter password"
+        required
+      />
+    </div>
+
+    @if (form.controls.password.invalid && form.controls.password.touched) {
+    <div class="error">
+      @if (form.controls.password.errors?.['required']) {
+      <small>Password is required.</small>
+      } @if (form.controls.password.errors?.['minlength']) {
+      <small>Password must be at least 6 characters.</small>
+      }
+    </div>
+    }
+
+    <br>
+    <button type="submit" class="login-btn">Login</button>
+    <div class="extra-links">
+      <p><a href="#">Forgot Password?</a></p>
+      <p>Don't have an account? <a href="#">Sign Up</a></p>
+    </div>
+
+
+
+
+  </form>
+</div>

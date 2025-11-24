@@ -1,0 +1,98 @@
+.home-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.home-container h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.menu {
+  margin-bottom: 20px;
+}
+
+.menu a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #2575fc;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.button-group {
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 16px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, #5b0fb0, #1e63d5);
+}
+
+.secondary-btn {
+  background: #f44336;
+  color: white;
+}
+
+.secondary-btn:hover {
+  background: #d32f2f;
+}
+
+.product-section {
+  margin-top: 30px;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-table th,
+.product-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.product-table th {
+  background: #2575fc;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.product-table tr:hover {
+  background: #f1f5ff;
+}
+
+.no-data {
+  color: #777;
+  margin-top: 20px;
+}

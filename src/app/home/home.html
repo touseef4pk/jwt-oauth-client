@@ -1,0 +1,39 @@
+<div class="home-container">
+  <h1>Welcome to the User Management System 🎉</h1>
+
+  <nav class="menu">
+    <a routerLink="/profile">Profile</a>
+    <a routerLink="/settings">Settings</a>
+  </nav>
+
+  <div class="button-group">
+    <button class="primary-btn" (click)="getProducts()">Load Products</button>
+    <button class="secondary-btn" (click)="logout()">Logout</button>
+  </div>
+
+  <div *ngIf="products.length > 0; else noData" class="product-section">
+    <h2>Product List</h2>
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price | currency }}</td>
+          <td>{{ product.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noData>
+    <p class="no-data">No products loaded yet. Click "Load Products".</p>
+  </ng-template>
+</div>
