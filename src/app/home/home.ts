@@ -14,13 +14,19 @@ export class Home {
   constructor(private router: Router, private auth: AuthService ) {}
 
   products: any[] = [];
+  user: any;
+
+  ngOnInit() {
+    debugger;
+    this.user = this.auth.getCurrentUser();
+  }
 
   logout(): void {
+    debugger;
 
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('refresh_token');
-
-    this.router.navigate(['/login']);
+   this.auth.clearTokens();
+   this.router.navigate(['/login']);
+  
   }
 
 

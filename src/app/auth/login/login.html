@@ -3,12 +3,6 @@
   <h1>Sign In</h1>
   <form [formGroup]="form" (ngSubmit)="submit()">
 
-      <div style="text-align:center; margin-top: 20px;">
-    <button class="google-btn" (click)="loginWithGoogle()">
-      <img src="https://developers.google.com/identity/images/g-logo.png" width="20">
-      Continue with Google
-    </button>
-  </div>
   
     <div class="form-group">
       <label for="email">Email Address</label>
@@ -52,8 +46,11 @@
       <p>Don't have an account? <a href="#">Sign Up</a></p>
     </div>
 
-
-
-
   </form>
+  <div style="text-align:center; margin-top: 20px;">
+  <button class="google-btn" (click)="loginWithGoogle()">
+    <img src="https://developers.google.com/identity/images/g-logo.png" width="20">
+    Continue with Google
+  </button>
+</div>
 </div>

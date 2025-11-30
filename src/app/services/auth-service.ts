@@ -61,6 +61,13 @@ export class AuthService {
   clearTokens() {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
+
+    // This method redirects the user to Google's End Session Endpoint,
+    // which gives them a chance to log out of Google completely.
+    this.oAuth.logoutUrl = 'https://accounts.google.com/logout'; // <-- Ensure this is set
+    this.oAuth.logOut(true); 
+
+    //this.oAuth.logOut(true);
   }
 
   getProducts(): Observable<any[]> {
@@ -81,6 +88,20 @@ export class AuthService {
     const idToken = this.oAuth.getIdToken();
 
     // Send to .NET backend for validation + local JWT issue
-    return this.http.post('http://localhost:5003/oauth/google', { idToken });
+    return this.http.post('http://localhost:5003/api/googleauth/login', { idToken });
   }
+
+getCurrentUser() {
+  const token = localStorage.getItem('access_token');
+  if (!token) return null;
+
+  const payload = JSON.parse(atob(token.split('.')[1]));
+
+  return {
+    username: payload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"],
+    role: payload["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]
+  };
+}
+
+
 }

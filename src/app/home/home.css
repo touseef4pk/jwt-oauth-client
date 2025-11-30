@@ -96,3 +96,32 @@ button {
   color: #777;
   margin-top: 20px;
 }
+
+/* 🔵 Top user bar */
+.user-bar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username {
+  font-weight: bold;
+  color: #333;
+}
+
+.logout-btn {
+  background: #ff4d4d;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #e60000;
+}
+
